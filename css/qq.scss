@@ -1,0 +1,198 @@
+@import './reset.scss';
+@function rem($f) {
+    @return $f / 37.5px * 1rem;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: rem(60px);
+    background: #40A3FE;
+    display: flex;
+    .head-portrait {
+        flex: 2;
+        height: 100%;
+        @extend %juzhong;
+        img {
+            width: 70%;
+            height: 80%;
+        }
+    }
+    .title {
+        flex: 6.5;
+        height: 100%;
+        @extend %juzhong;
+        span {
+            font-size: rem(20px);
+            color: white;
+        }
+    }
+    .more {
+        flex: 1.5;
+        height: 100%;
+        @extend %juzhong;
+        span {
+            font-size: rem(54px);
+            color: white;
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    .search {
+        width: 100%;
+        height: rem(45px);
+        position: relative;
+        margin-bottom: rem(10px);
+        @extend %juzhong;
+        input {
+            width: 95%;
+            height: 65%;
+            background: #EEEFF3;
+            padding-left: rem(34px);
+        }
+        span {
+            position: absolute;
+            left: 4%;
+            top: 26%;
+            font-size: rem(19px);
+        }
+    }
+    .chat-frame {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .box {
+            width: 150%;
+            height: rem(60px);
+            display: flex;
+            dl {
+                flex: 1;
+                height: rem(60px);
+                background: #EEEFF3;
+                border-bottom: 1px solid rgb(124, 122, 122);
+                display: flex;
+                dt {
+                    flex: 2;
+                    height: 100%;
+                    @extend %juzhong;
+                    img {
+                        width: 80%;
+                        height: 90%;
+                    }
+                }
+                dd {
+                    flex: 8;
+                    height: 100%;
+                    margin-left: rem(5px);
+                    display: flex;
+                    flex-direction: column;
+                    h1 {
+                        width: 100%;
+                        flex: 6;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        span {
+                            font-weight: bold;
+                            font-size: rem(16px);
+                        }
+                        time {
+                            margin-right: rem(5px);
+                        }
+                    }
+                    p {
+                        width: 100%;
+                        flex: 4;
+                    }
+                }
+            }
+            .right {
+                flex: 0.5;
+                height: 100%;
+                span {
+                    display: inline-block;
+                    width: 32%;
+                    height: 100%;
+                    text-align: center;
+                    line-height: rem(60px);
+                    &:nth-child(1) {
+                        background: #C7C7CC;
+                    }
+                    &:nth-child(2) {
+                        background: #FF9C00;
+                    }
+                    &:nth-child(3) {
+                        background: #FF3B30;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: rem(60px);
+    border-top: 1px solid #EEEFF3;
+    .nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        li {
+            width: 33.3%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            span {
+                &:nth-child(1) {
+                    flex: 7;
+                    width: 100%;
+                    @extend %juzhong;
+                    font-size: rem(30px);
+                }
+                &:nth-child(2) {
+                    flex: 3;
+                    width: 100%;
+                    @extend %juzhong;
+                }
+            }
+        }
+    }
+}
+
+.right {
+    animation: right 0.5s linear 1 forwards;
+}
+
+@keyframes right {
+    0% {
+        transform: translate(-385px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.left {
+    animation: left 0.5s linear 1 forwards;
+}
+
+@keyframes left {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-385px);
+    }
+}
